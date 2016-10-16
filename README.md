@@ -18,7 +18,7 @@ The other styles I trained the RNN on resulted on complete mess of notes (almost
 
 <tr>
 
-<td>[► NNHouse](javascript:void(0))</td>
+<td>► NNHouse</td>
 
 <td>1:42</td>
 
@@ -30,7 +30,7 @@ The other styles I trained the RNN on resulted on complete mess of notes (almost
 
 <tr>
 
-<td>[► Moznn](javascript:void(0))</td>
+<td>► Moznn</td>
 
 <td>4:43</td>
 
@@ -43,8 +43,6 @@ The other styles I trained the RNN on resulted on complete mess of notes (almost
 </tbody>
 
 </table>
-
-_Click on the name of a music to play it_
 
 ### Downloads :
 
