@@ -39,7 +39,7 @@ First, I used [Karpathy's Minimal Char-RNN](https://gist.github.com/karpathy/d4d
 <big>Can I train it on my own music?</big> Sure! As the code is mainly not mine, I made [MuseNN open source](https://github.com/p4ulolol/musenn)! You just have to clone the Git repository to your files. Then, here is how to train it :
 
 1.  Find some good MIDI files (the more the better!) and convert them to ABC (I used [EasyABC](https://sourceforge.net/projects/easyabc/) to do this).
-2.  Copy <u>only the notes lines</u> (note the headers like "X:...", "K:..." or "V:...") and paste it in a text file in MuseNN's folder.
+2.  Copy <u>only the notes lines</u> (not the headers like "X:...", "K:..." or "V:...") and paste it in a text file in MuseNN's folder.
 3.  Now you can train MuseNN like this:
 
     ```musenn.py -f your_file.txt -o output_folder -m 2e6```
