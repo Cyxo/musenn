@@ -57,4 +57,7 @@ You can contact MuseNN (actually its creator, me, Paul Forveille, also known as 
 *   On Twitter : [@cyxo_officiel](https://twitter.com/cyxo_officiel)
 
 I'm French so if you want to speak French, you can ![](http://forums.everythingicafe.com/data/MetaMirrorCache/photar.net_emoji_emoji_E405.png)
-Je suis français !_Enjoy!_
+
+Je suis français !
+
+_Enjoy!_
