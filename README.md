@@ -2,9 +2,9 @@
 
 ### Summary :
 
-1.  [Some compositions](#comp)
-2.  [How does it work](#func)
-3.  [Contact MuseNN](#contact)
+1.  Some compositions
+2.  How does it work
+3.  Contact MuseNN
 
 ## Some composition
 
