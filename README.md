@@ -13,6 +13,7 @@ MuseNN was trained on different styles. The best results came from House melodie
 The other styles I trained the RNN on resulted on complete mess of notes (almost like [Black MIDIs](https://www.youtube.com/watch?v=I906a5msynw)), or were too close from the training models. So here are the best I could get (training on little data - around 250 chars -, with a minimal RNN, on my highschool's server) :
 
 | ► NNHouse | 1:42 | 1 instrument (piano) | Trained on ten 15-seconds melodies |
+
 | ► Moznn | 4:43 | 4 instruments (violin 1 and 2, viola, cello) | Trained on Mozart's [String quartet nÂ°1 in G](https://www.youtube.com/watch?v=2I9LyiGrclc) |
 
 ### Downloads :
