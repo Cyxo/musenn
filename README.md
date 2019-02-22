@@ -55,7 +55,7 @@ And... You're done ! You can now export it as MIDI so you can listen the creatio
 You can contact MuseNN (actually its creator, me, Paul Forveille, also known as [Cyxo](http://cyxo.cf/)) by the following ways :
 
 *   By mail : [MuseNN@Cyxo.33mail.com](mailto:MuseNN@Cyxo.33mail.com)
-*   On Twitter : [@cyxo_officiel](https://twitter.com/cyxo_officiel)
+*   On Twitter : [@cyxo_o](https://twitter.com/cyxo_officiel)
 
 I'm French so if you want to speak French, you can ![](http://forums.everythingicafe.com/data/MetaMirrorCache/photar.net_emoji_emoji_E405.png)
 
