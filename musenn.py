@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import numpy as np
 import os
-
 import argparse
+
 parser = argparse.ArgumentParser(prog="musenn.py", description="Minimal Character Recurent Neural Network for Music")
 parser.add_argument('--hidden-size', '-S', help='Size of the hidden layer (hyperparameter, default: 100).', default=100, type=float)
 parser.add_argument('--seq-length', '-L', help='Numbers of steps to unroll the RNN for (hyperparameter, default: 25).', default=25, type=float)
@@ -14,6 +14,7 @@ parser.add_argument('--show-every', '-p', metavar='n', help='Prints sample to co
 parser.add_argument('--length', '-l', help='The length of the sample at checkpoint (default: 500).', default=500, type=float)
 parser.add_argument('--file', '-f', help='Input file to train on (default: "input.txt").', default="input.txt", type=str)
 parser.add_argument('--foldern', '-o', metavar='folder_name', help='Output directory will be "output-folder_name" (default: random).', default=str(np.random.randint(8999)+1000), type=str)
+parser.add_argument("--key", "-k", help='Use this to force the output notes to be in a certain key (default: all)', default="all", type=str)
 args = parser.parse_args()
 
 # data I/O
@@ -129,10 +130,13 @@ while smooth_loss > threshold and (n <= max_iter or max_iter == -1):
   if n % chkpt == chkpt - 1:
     sample_ix = sample(hprev, inputs[0], length)
     txt = ''.join(ix_to_char[ix] for ix in sample_ix)
-    with open('output-' + foldern + '/epoch: ' + str(int((n+1)/chkpt)) + ' ; loss: ' + str(smooth_loss) + '.txt', 'w+') as f:
+    with open('output-' + foldern + '/epoch ' + str(int((n+1)/chkpt)) + ', loss ' + str(smooth_loss) + '.txt', 'w+') as f:
+        if args.key != "all":
+            txt = txt.replace("^","").replace("_","")
+            f.write("K:"+args.key+"\n")
         f.write(txt)
     f.close()
-    print('[Sample saved to : output-' + foldern + '/epoch: ' + str(int((n+1)/chkpt)) + ' ; loss: ' + str(smooth_loss) + '.txt]')
+    print('[Sample saved to : output-' + foldern + '/epoch ' + str(int((n+1)/chkpt)) + ', loss ' + str(smooth_loss) + '.txt]')
   
   # perform parameter update with Adagrad
   for param, dparam, mem in zip([Wxh, Whh, Why, bh, by], 
@@ -146,7 +150,7 @@ while smooth_loss > threshold and (n <= max_iter or max_iter == -1):
 
 sample_ix = sample(hprev, inputs[0], length)
 txt = ''.join(ix_to_char[ix] for ix in sample_ix)
-with open('output-' + foldern + '/[FINAL] epoch: ' + str(int((n+1)/chkpt)) + ' ; loss: ' + str(smooth_loss) + '.txt', 'w+') as f:
+with open('output-' + foldern + '/[FINAL] epoch ' + str(int((n+1)/chkpt)) + ', loss ' + str(smooth_loss) + '.txt', 'w+') as f:
     f.write(txt)
 f.close()
-print('[FINAL sample saved to : output-' + foldern + '/[FINAL] epoch: ' + str(int((n+1)/chkpt)) + ' ; loss: ' + str(smooth_loss) + '.txt]')
+print('[FINAL sample saved to : output-' + foldern + '/[FINAL] epoch ' + str(int((n+1)/chkpt)) + ', loss ' + str(smooth_loss) + '.txt]')
